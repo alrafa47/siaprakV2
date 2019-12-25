@@ -1,0 +1,24 @@
+<?php  
+
+require_once 'controller/TahunAjaran/TahunAjaran.php';
+
+$mahasiswa = new Mahasiswa();
+if (isset($_GET['get'])) {
+	$mahasiswa->get_update_data();
+}else if (isset($_GET['update'])) {
+	$mahasiswa->do_update();
+}else if (isset($_GET['insert'])) {
+	$mahasiswa->insert_data();
+}else if (isset($_GET['save'])) {
+	$mahasiswa->do_insert();
+}else if (isset($_GET['delete'])) {
+	$mahasiswa->delete_data();
+}else if (isset($_GET['aktifkan'])){
+	$mahasiswa->aktifkan_tahunajaran();
+}else if (isset($_GET['nonaktif'])){
+	$mahasiswa->nonaktif_tahunajaran();
+}
+else{
+	$mahasiswa->display_data();
+}
+?>
